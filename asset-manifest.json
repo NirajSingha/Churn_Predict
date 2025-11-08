@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Churn_Predict/static/css/main.2d4d8919.css",
+    "main.js": "/Churn_Predict/static/js/main.40055cc7.js",
+    "index.html": "/Churn_Predict/index.html",
+    "main.2d4d8919.css.map": "/Churn_Predict/static/css/main.2d4d8919.css.map",
+    "main.40055cc7.js.map": "/Churn_Predict/static/js/main.40055cc7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2d4d8919.css",
+    "static/js/main.40055cc7.js"
+  ]
+}
