@@ -1,0 +1,245 @@
+/* ---------- Base ---------- */
+:root {
+  --bg: #f5f7fb;
+  --bg-grad1: #f8fbff;
+  --bg-grad2: #eef3ff;
+  --card: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --primary: #2563eb;
+  --primary-600: #1d4ed8;
+  --success: #16a34a;
+  --danger: #dc2626;
+  --ring: rgba(37, 99, 235, 0.35);
+  --shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  --border: #e5e7eb;
+}
+
+.dark {
+  --bg: #0f172a;
+  --bg-grad1: #0b1225;
+  --bg-grad2: #0f1a37;
+  --card: #0b1225;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --primary: #60a5fa;
+  --primary-600: #3b82f6;
+  --success: #22c55e;
+  --danger: #f87171;
+  --ring: rgba(96, 165, 250, 0.35);
+  --shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  --border: #1f2a44;
+}
+
+* {
+  box-sizing: border-box;
+}
+html,
+body,
+#root {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial,
+    sans-serif;
+  color: var(--text);
+  background: radial-gradient(
+      1000px 600px at -10% -10%,
+      var(--bg-grad1),
+      transparent
+    ),
+    radial-gradient(1000px 600px at 110% -10%, var(--bg-grad2), transparent),
+    var(--bg);
+}
+
+/* ---------- Layout ---------- */
+.wrapper {
+  min-height: 100%;
+  padding: 32px 20px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+.container {
+  width: 100%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+@media (max-width: 980px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Header ---------- */
+.header {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.brand .logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #60a5fa, #2563eb);
+  box-shadow: var(--shadow);
+}
+.title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+.subtitle {
+  color: var(--muted);
+  margin-top: 4px;
+  font-size: 13px;
+}
+
+/* ---------- Cards ---------- */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 20px;
+}
+
+/* ---------- Form ---------- */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.form-row.full {
+  grid-column: 1 / -1;
+}
+
+label {
+  font-size: 13px;
+  color: var(--muted);
+}
+.input,
+.select {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 14px;
+  color: var(--text);
+  background: #fff0;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  outline: none;
+  transition: 0.15s ease;
+}
+.input:focus,
+.select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px var(--ring);
+}
+
+.button {
+  appearance: none;
+  border: none;
+  cursor: pointer;
+  background: var(--primary);
+  color: white;
+  font-weight: 700;
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-size: 16px;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
+  transition: transform 0.05s ease, background 0.15s ease;
+}
+.button:hover {
+  background: var(--primary-600);
+}
+.button:active {
+  transform: translateY(1px);
+}
+.button.block {
+  width: 100%;
+}
+
+.help {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* ---------- Result ---------- */
+.result {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: 800;
+  font-size: 22px;
+  margin-top: 12px;
+}
+.result.success {
+  color: var(--success);
+}
+.result.warn {
+  color: var(--danger);
+}
+
+/* ---------- Metrics ---------- */
+.metrics {
+  margin-bottom: 14px;
+}
+.metrics li {
+  margin: 3px 0;
+  font-size: 14px;
+}
+.section-title {
+  margin: 0 0 10px;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+/* ---------- Chart holder ---------- */
+.chart-card {
+  padding: 10px 10px 4px;
+}
+
+/* ---------- Top bar actions ---------- */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.toggle {
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.toggle:hover {
+  box-shadow: var(--shadow);
+}
+
+/* ---------- Small utilities ---------- */
+.mt16 {
+  margin-top: 16px;
+}
+.mt24 {
+  margin-top: 24px;
+}
